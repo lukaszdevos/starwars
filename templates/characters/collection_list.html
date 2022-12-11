@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+  <div class="container">
+    <a href="{% url 'characters:create-collections' %}" role="button" class="btn btn-primary mb-2">Fetch characters
+      collection</a>
+    <h1>My collection list:</h1>
+    <div class="container m-4">
+      {% for collection in page_obj %}
+        <div class="my-4">
+          <a href="{% url 'characters:detail-collections' collection.id %}">{{ collection }}</a>
+        </div>
+      {% endfor %}
+    </div>
+    {% include "includes/paginator.html" %}
+  </div>
+{% endblock %}

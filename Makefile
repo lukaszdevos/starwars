@@ -6,3 +6,7 @@ build:
 
 runserver:
 	python manage.py runserver
+
+clean_code:
+	black .
+	isort .

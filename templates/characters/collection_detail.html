@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load tags %}
+{% block body %}
+  <div class="container">
+    {{ object.csv_clear_name }}
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+      {% for header in headers %}
+        <th scope="col">{{ header }}</th>
+      {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in table %}
+      <tr>
+        {% for element in row %}
+          <td>{{ element }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if load_more %}
+    <a href="{{ request.get_full_path|load_more_rows }}" class="btn btn-light" role="button" aria-pressed="true">Load more</a>
+  {% endif %}
+{% endblock %}
