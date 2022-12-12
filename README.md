@@ -20,4 +20,4 @@ SWAPI_URL=http://localhost:8000
 
 ### Important!
 1. Run swapi app https://github.com/phalt/swapi, default run on http://localhost:8000
-2. Run make runserver, default run on http://localhost:8001
+2. Run `make runserver`, default run on http://localhost:8001
