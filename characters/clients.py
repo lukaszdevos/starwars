@@ -28,6 +28,9 @@ class SwapiClient:
         self.adapter = SwapiAdapter()
         self.header = CHARACTER_HEADER
 
+    def get_characters_table(self) -> petl.Table:
+        return petl.fromcsv(self.csv_file)
+
     def create_characters_csv(self) -> File:
         table = self._fetch_all_characters()
         table = self._convert_edited_date(table)

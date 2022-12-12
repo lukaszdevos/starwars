@@ -6,8 +6,8 @@
   </div>
   <br>
   <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-    {% for header in headers %}
-      <a href="{% url 'characters:detail-collections-aggregate' object.id %}?agg={{ header }}" class="btn btn-primary" aria-current="page">{{ header }}</a>
+    {% for header in aggregate %}
+      <button onclick="addParams('{{ header.0 }}')" class="btn btn-primary {{ header.1 }}" aria-current="page">{{ header.0 }}</button>
     {% endfor %}
   </div>
 

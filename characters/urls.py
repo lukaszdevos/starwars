@@ -1,7 +1,8 @@
 from django.urls import path
 
-from characters.views import (CollectionCreateView, CollectionDetailView,
-                              CollectionListView)
+from characters.views import (CollectionCreateView,
+                              CollectionDetailAggregateView,
+                              CollectionDetailView, CollectionListView)
 
 app_name = "characters"
 
@@ -14,5 +15,10 @@ urlpatterns = [
         "collections/<int:pk>/",
         CollectionDetailView.as_view(),
         name="detail-collections",
+    ),
+    path(
+        "collections/<int:pk>/aggregate/",
+        CollectionDetailAggregateView.as_view(),
+        name="detail-collections-aggregate",
     ),
 ]

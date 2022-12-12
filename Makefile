@@ -5,7 +5,7 @@ build:
 	python manage.py migrate
 
 runserver:
-	python manage.py runserver
+	python manage.py runserver 8001
 
 clean_code:
 	black .

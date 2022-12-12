@@ -1,4 +1,4 @@
-from urllib.parse import parse_qsl, urlencode, urlparse
+from urllib.parse import parse_qs, parse_qsl, urlencode, urlparse
 
 from django import template
 
